@@ -41,7 +41,7 @@
             this.button_show.Name = "button_show";
             this.button_show.Size = new System.Drawing.Size(106, 35);
             this.button_show.TabIndex = 0;
-            this.button_show.Text = "button_show";
+            this.button_show.Text = "Показать объекты";
             this.button_show.Click += new System.EventHandler(this.button_show_Click);
             // 
             // button_deletestorage
@@ -50,7 +50,7 @@
             this.button_deletestorage.Name = "button_deletestorage";
             this.button_deletestorage.Size = new System.Drawing.Size(106, 35);
             this.button_deletestorage.TabIndex = 1;
-            this.button_deletestorage.Text = "button_deletestorage";
+            this.button_deletestorage.Text = "Очистить хранилище";
             this.button_deletestorage.UseVisualStyleBackColor = true;
             this.button_deletestorage.Click += new System.EventHandler(this.button_deletestorage_Click);
             // 
@@ -60,7 +60,7 @@
             this.button_clear_paintbox.Name = "button_clear_paintbox";
             this.button_clear_paintbox.Size = new System.Drawing.Size(106, 35);
             this.button_clear_paintbox.TabIndex = 3;
-            this.button_clear_paintbox.Text = "button_clear_paintbox";
+            this.button_clear_paintbox.Text = "Очистить поле";
             this.button_clear_paintbox.UseVisualStyleBackColor = true;
             this.button_clear_paintbox.Click += new System.EventHandler(this.button_clear_paintbox_Click);
             // 
@@ -70,12 +70,13 @@
             this.button_del__item_storage.Name = "button_del__item_storage";
             this.button_del__item_storage.Size = new System.Drawing.Size(106, 35);
             this.button_del__item_storage.TabIndex = 4;
-            this.button_del__item_storage.Text = "button_del__item_storage";
+            this.button_del__item_storage.Text = "Удалить объекты";
             this.button_del__item_storage.UseVisualStyleBackColor = true;
             this.button_del__item_storage.Click += new System.EventHandler(this.button_del__item_storage_Click);
             // 
             // paint_box
             // 
+            this.paint_box.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.paint_box.Location = new System.Drawing.Point(12, 12);
             this.paint_box.Name = "paint_box";
             this.paint_box.Size = new System.Drawing.Size(589, 426);
