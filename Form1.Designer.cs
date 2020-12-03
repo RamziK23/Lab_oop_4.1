@@ -32,7 +32,7 @@
             this.button_deletestorage = new System.Windows.Forms.Button();
             this.button_clear_paintbox = new System.Windows.Forms.Button();
             this.button_del__item_storage = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.paint_box = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button_show
@@ -74,12 +74,13 @@
             this.button_del__item_storage.UseVisualStyleBackColor = true;
             this.button_del__item_storage.Click += new System.EventHandler(this.button_del__item_storage_Click);
             // 
-            // panel1
+            // paint_box
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(589, 426);
-            this.panel1.TabIndex = 5;
+            this.paint_box.Location = new System.Drawing.Point(12, 12);
+            this.paint_box.Name = "paint_box";
+            this.paint_box.Size = new System.Drawing.Size(589, 426);
+            this.paint_box.TabIndex = 5;
+            this.paint_box.MouseClick += new System.Windows.Forms.MouseEventHandler(this.paint_box_MouseClick);
             // 
             // Form1
             // 
@@ -90,7 +91,7 @@
             this.Controls.Add(this.button_show);
             this.Controls.Add(this.button_deletestorage);
             this.Controls.Add(this.button_del__item_storage);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.paint_box);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -103,7 +104,7 @@
         private System.Windows.Forms.Button button_deletestorage;
         private System.Windows.Forms.Button button_clear_paintbox;
         private System.Windows.Forms.Button button_del__item_storage;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel paint_box;
     }
 }
 
