@@ -16,5 +16,6 @@ namespace Lab_oop_4._1
         {
             InitializeComponent();
         }
+
     }
 }
