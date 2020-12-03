@@ -28,48 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_show = new System.Windows.Forms.Button();
+            this.button_deletestorage = new System.Windows.Forms.Button();
+            this.button_clear_paintbox = new System.Windows.Forms.Button();
+            this.button_del__item_storage = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // button_show
             // 
-            this.button1.Location = new System.Drawing.Point(607, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-
+            this.button_show.Location = new System.Drawing.Point(647, 22);
+            this.button_show.Name = "button_show";
+            this.button_show.Size = new System.Drawing.Size(106, 35);
+            this.button_show.TabIndex = 0;
+            this.button_show.Text = "button_show";
+            this.button_show.Click += new System.EventHandler(this.button_show_Click);
             // 
-            // button2
+            // button_deletestorage
             // 
-            this.button2.Location = new System.Drawing.Point(607, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_deletestorage.Location = new System.Drawing.Point(647, 61);
+            this.button_deletestorage.Name = "button_deletestorage";
+            this.button_deletestorage.Size = new System.Drawing.Size(106, 35);
+            this.button_deletestorage.TabIndex = 1;
+            this.button_deletestorage.Text = "button_deletestorage";
+            this.button_deletestorage.UseVisualStyleBackColor = true;
+            this.button_deletestorage.Click += new System.EventHandler(this.button_deletestorage_Click);
             // 
-            // button4
+            // button_clear_paintbox
             // 
-            this.button4.Location = new System.Drawing.Point(607, 99);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button_clear_paintbox.Location = new System.Drawing.Point(647, 143);
+            this.button_clear_paintbox.Name = "button_clear_paintbox";
+            this.button_clear_paintbox.Size = new System.Drawing.Size(106, 35);
+            this.button_clear_paintbox.TabIndex = 3;
+            this.button_clear_paintbox.Text = "button_clear_paintbox";
+            this.button_clear_paintbox.UseVisualStyleBackColor = true;
+            this.button_clear_paintbox.Click += new System.EventHandler(this.button_clear_paintbox_Click);
             // 
-            // button3
+            // button_del__item_storage
             // 
-            this.button3.Location = new System.Drawing.Point(607, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_del__item_storage.Location = new System.Drawing.Point(647, 102);
+            this.button_del__item_storage.Name = "button_del__item_storage";
+            this.button_del__item_storage.Size = new System.Drawing.Size(106, 35);
+            this.button_del__item_storage.TabIndex = 4;
+            this.button_del__item_storage.Text = "button_del__item_storage";
+            this.button_del__item_storage.UseVisualStyleBackColor = true;
+            this.button_del__item_storage.Click += new System.EventHandler(this.button_del__item_storage_Click);
             // 
             // panel1
             // 
@@ -83,11 +86,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_clear_paintbox);
+            this.Controls.Add(this.button_show);
+            this.Controls.Add(this.button_deletestorage);
+            this.Controls.Add(this.button_del__item_storage);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -96,10 +99,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_show;
+        private System.Windows.Forms.Button button_deletestorage;
+        private System.Windows.Forms.Button button_clear_paintbox;
+        private System.Windows.Forms.Button button_del__item_storage;
         private System.Windows.Forms.Panel panel1;
     }
 }
