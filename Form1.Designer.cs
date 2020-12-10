@@ -43,6 +43,7 @@
             this.button_show.TabIndex = 0;
             this.button_show.Text = "Показать объекты";
             this.button_show.Click += new System.EventHandler(this.button_show_Click);
+            this.button_show.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // button_deletestorage
             // 
@@ -53,6 +54,7 @@
             this.button_deletestorage.Text = "Очистить хранилище";
             this.button_deletestorage.UseVisualStyleBackColor = true;
             this.button_deletestorage.Click += new System.EventHandler(this.button_deletestorage_Click);
+            this.button_deletestorage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // button_clear_paintbox
             // 
@@ -63,6 +65,7 @@
             this.button_clear_paintbox.Text = "Очистить поле";
             this.button_clear_paintbox.UseVisualStyleBackColor = true;
             this.button_clear_paintbox.Click += new System.EventHandler(this.button_clear_paintbox_Click);
+            this.button_clear_paintbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // button_del__item_storage
             // 
@@ -73,6 +76,7 @@
             this.button_del__item_storage.Text = "Удалить объекты";
             this.button_del__item_storage.UseVisualStyleBackColor = true;
             this.button_del__item_storage.Click += new System.EventHandler(this.button_del__item_storage_Click);
+            this.button_del__item_storage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // paint_box
             // 
@@ -95,6 +99,7 @@
             this.Controls.Add(this.paint_box);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
 
         }

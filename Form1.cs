@@ -39,6 +39,7 @@ namespace Lab_oop_4._1
                 this.x = x - rad;
                 this.y = y - rad;
             }
+
             ~Circle() { }
         }
 
@@ -88,23 +89,26 @@ namespace Lab_oop_4._1
             }
             public void doubleSize(ref int size)
             {
-                Storage storage1 = new Storage(size * 2);
+                Storage storage1 = new Storage(size + 10);
                 for (int i = 0; i < size; ++i)
                     storage1.objects[i] = objects[i];
-                for (int i = size; i < (size * 2) - 1; ++i)
+                for (int i = size; i < (size + 10) - 1; ++i)
                 {
                     storage1.objects[i] = null;
                 }
-                size = size * 2;
+                size = size + 10;
                 initialisat(size);
                 for (int i = 0; i < size; ++i)
                     objects[i] = storage1.objects[i];
             }
+
+
+
             ~Storage() { }
         };
 
         private void paint_circle(Color name, ref Storage stg, int index)
-        {          
+        {
             Pen pen = new Pen(name, 3);
 
             if (!storag.check_empty(index))
@@ -162,7 +166,7 @@ namespace Lab_oop_4._1
 
         private void button_clear_paintbox_Click(object sender, EventArgs e)
         {
-            paint_box.Invalidate(); 
+            paint_box.Invalidate();
             paint_box.Refresh();
             for (int i = 0; i < k; ++i)
             {
@@ -174,7 +178,7 @@ namespace Lab_oop_4._1
         }
 
         private void remove_selected_circle(ref Storage stg)
-        {  
+        {
             for (int i = 0; i < k; ++i)
             {
                 if (!storag.check_empty(i))
@@ -189,15 +193,17 @@ namespace Lab_oop_4._1
 
         private void paint_box_MouseClick(object sender, MouseEventArgs e)
         {
-            Circle krug = new Circle(e.X, e.Y);
+            //Circle krug = new Circle(e.X, e.Y);
+            //if (index == k)
+            //    storag.doubleSize(ref k);
+
+            int c = check_circle(ref storag, k, e.X-15, e.Y-15);
             if (index == k)
                 storag.doubleSize(ref k);
-           
-            int c = check_circle(ref storag, k, krug.x, krug.y);
             if (c != -1)
-            {  
+            {
                 if (Control.ModifierKeys == Keys.Control)
-                { 
+                {
                     if (p == 0)
                     {
                         paint_circle(Color.Navy, ref storag, indexin);
@@ -206,25 +212,32 @@ namespace Lab_oop_4._1
                     paint_circle(Color.Red, ref storag, c);
                 }
                 else
-                {   
+                {
                     remove_selection_circle(ref storag);
-                   
+
                     paint_circle(Color.Red, ref storag, c);
                 }
                 return;
             }
-             
-            storag.add_object(index, ref krug, k, ref indexin);
-           
-            remove_selection_circle(ref storag);
-          
-            paint_circle(Color.Red, ref storag, indexin);
-            ++index;
-            p = 0;
+            else
+            {
+                Circle krug = new Circle(e.X, e.Y);
+
+                storag.add_object(index, ref krug, k, ref indexin);
+
+                remove_selection_circle(ref storag);
+
+                paint_circle(Color.Red, ref storag, indexin);
+                ++index;
+                p = 0;
+            }
+
+
+            
         }
 
         private int check_circle(ref Storage stg, int size, int x, int y)
-        { 
+        {
             if (stg.occupied(size) != 0)
             {
                 for (int i = 0; i < size; ++i)
@@ -235,7 +248,7 @@ namespace Lab_oop_4._1
                         int x2 = stg.objects[i].x + 15;
                         int y1 = stg.objects[i].y - 15;
                         int y2 = stg.objects[i].y + 15;
-                       
+
                         if ((x1 <= x && x <= x2) && (y1 <= y && y <= y2))
                             return i;
                     }
@@ -245,12 +258,29 @@ namespace Lab_oop_4._1
         }
 
         private void remove_selection_circle(ref Storage stg)
-        {   
+        {
             for (int i = 0; i < k; ++i)
             {
                 if (!storag.check_empty(i))
-                {  
+                {
                     paint_circle(Color.Navy, ref storag, i);
+                }
+            }
+        }
+
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Delete)
+            {
+                remove_selected_circle(ref storag);
+                paint_box.Refresh();
+                if (storag.occupied(k) != 0)
+                {
+                    for (int i = 0; i < k; ++i)
+                    {
+                        paint_circle(Color.Navy, ref storag, i);
+                    }
                 }
             }
         }
